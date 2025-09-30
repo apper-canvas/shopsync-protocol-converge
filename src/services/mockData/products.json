@@ -1,0 +1,134 @@
+[
+  {
+    "Id": 1,
+    "name": "Wireless Bluetooth Headphones",
+    "description": "Premium noise-canceling wireless headphones with 30-hour battery life and crystal-clear audio quality.",
+    "price": 89.99,
+    "stockQuantity": 25,
+    "category": "Electronics",
+    "imageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop&crop=center",
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "Id": 2,
+    "name": "Classic Cotton T-Shirt",
+    "description": "Comfortable 100% cotton t-shirt available in multiple colors. Perfect for casual wear and layering.",
+    "price": 19.99,
+    "stockQuantity": 5,
+    "category": "Clothing",
+    "imageUrl": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop&crop=center",
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "Id": 3,
+    "name": "Smart Fitness Watch",
+    "description": "Advanced fitness tracking with heart rate monitoring, GPS, and smartphone notifications.",
+    "price": 149.99,
+    "stockQuantity": 0,
+    "category": "Electronics",
+    "imageUrl": "https://images.unsplash.com/photo-1544117519-31a4b719223d?w=400&h=400&fit=crop&crop=center",
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "Id": 4,
+    "name": "Ceramic Plant Pot Set",
+    "description": "Beautiful set of 3 ceramic plant pots with drainage holes. Perfect for herbs, succulents, and small plants.",
+    "price": 34.99,
+    "stockQuantity": 15,
+    "category": "Home & Garden",
+    "imageUrl": "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=400&h=400&fit=crop&crop=center",
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "Id": 5,
+    "name": "Yoga Mat Premium",
+    "description": "High-quality non-slip yoga mat with extra cushioning. Eco-friendly and durable for all types of exercise.",
+    "price": 45.99,
+    "stockQuantity": 30,
+    "category": "Sports & Outdoors",
+    "imageUrl": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=400&fit=crop&crop=center",
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "Id": 6,
+    "name": "JavaScript Programming Guide",
+    "description": "Comprehensive guide to modern JavaScript programming with practical examples and best practices.",
+    "price": 29.99,
+    "stockQuantity": 12,
+    "category": "Books",
+    "imageUrl": "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=400&h=400&fit=crop&crop=center",
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "Id": 7,
+    "name": "Board Game Collection",
+    "description": "Classic strategy board game for 2-4 players. Perfect for family game nights and social gatherings.",
+    "price": 39.99,
+    "stockQuantity": 8,
+    "category": "Toys & Games",
+    "imageUrl": "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=400&h=400&fit=crop&crop=center",
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "Id": 8,
+    "name": "Natural Face Moisturizer",
+    "description": "Organic face moisturizer with SPF 30 protection. Suitable for all skin types with natural ingredients.",
+    "price": 24.99,
+    "stockQuantity": 20,
+    "category": "Health & Beauty",
+    "imageUrl": "https://images.unsplash.com/photo-1556228578-dd5e4ecc4115?w=400&h=400&fit=crop&crop=center",
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "Id": 9,
+    "name": "Premium Coffee Beans",
+    "description": "Single-origin arabica coffee beans, medium roast. Ethically sourced with rich flavor and smooth finish.",
+    "price": 16.99,
+    "stockQuantity": 35,
+    "category": "Food & Beverages",
+    "imageUrl": "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400&h=400&fit=crop&crop=center",
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "Id": 10,
+    "name": "Denim Jacket Classic",
+    "description": "Timeless denim jacket with classic fit. Made from durable cotton blend with vintage-inspired styling.",
+    "price": 79.99,
+    "stockQuantity": 6,
+    "category": "Clothing",
+    "imageUrl": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400&h=400&fit=crop&crop=center",
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "Id": 11,
+    "name": "Wireless Charging Pad",
+    "description": "Fast wireless charging pad compatible with all Qi-enabled devices. Sleek design with LED indicator.",
+    "price": 32.99,
+    "stockQuantity": 18,
+    "category": "Electronics",
+    "imageUrl": "https://images.unsplash.com/photo-1609592842522-db5135f26ce4?w=400&h=400&fit=crop&crop=center",
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "Id": 12,
+    "name": "Garden Tool Set",
+    "description": "Complete 5-piece garden tool set with ergonomic handles. Includes trowel, pruner, weeder, and more.",
+    "price": 42.99,
+    "stockQuantity": 14,
+    "category": "Home & Garden",
+    "imageUrl": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=400&fit=crop&crop=center",
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-15T10:00:00Z"
+  }
+]
