@@ -12,23 +12,22 @@ const ProductGrid = ({ products, loading, error, onAddToCart, onEdit, isManager 
   const [selectedCategory, setSelectedCategory] = useState("all")
 
   // Get unique categories from products
-  const categories = [...new Set(products.map(p => p.category))].sort()
-
+const categories = [...new Set(products.map(p => p.category_c || p.category || ''))].filter(c => c).sort()
   // Filter products based on search and category
   useEffect(() => {
     let filtered = products
 
     // Filter by search term
     if (searchTerm.trim()) {
-      filtered = filtered.filter(product =>
-        product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        product.description.toLowerCase().includes(searchTerm.toLowerCase())
+filtered = filtered.filter(product =>
+        (product.name_c || product.name || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (product.description_c || product.description || '').toLowerCase().includes(searchTerm.toLowerCase())
       )
     }
 
     // Filter by category
-    if (selectedCategory !== "all") {
-      filtered = filtered.filter(product => product.category === selectedCategory)
+if (selectedCategory !== "all") {
+      filtered = filtered.filter(product => (product.category_c || product.category) === selectedCategory)
     }
 
     setFilteredProducts(filtered)

@@ -28,10 +28,11 @@ const CustomerShop = ({ addToCart }) => {
     }
   }
 
-  const handleAddToCart = (product) => {
-    if (product.stockQuantity > 0) {
+const handleAddToCart = (product) => {
+    const stockQty = product.stock_quantity_c || product.stockQuantity || 0
+    if (stockQty > 0) {
       addToCart(product)
-      toast.success(`${product.name} added to cart!`, {
+      toast.success(`${product.name_c || product.name} added to cart!`, {
         icon: "🛒"
       })
     } else {

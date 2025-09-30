@@ -1,14 +1,14 @@
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
-import { toast } from "react-toastify"
-import { Card, CardHeader, CardContent, CardFooter } from "@/components/atoms/Card"
-import Button from "@/components/atoms/Button"
-import Input from "@/components/atoms/Input"
-import CartItem from "@/components/molecules/CartItem"
-import OrderSummary from "@/components/organisms/OrderSummary"
-import Empty from "@/components/ui/Empty"
-import ApperIcon from "@/components/ApperIcon"
-import { orderService } from "@/services/api/orderService"
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/atoms/Card";
+import { orderService } from "@/services/api/orderService";
+import ApperIcon from "@/components/ApperIcon";
+import Button from "@/components/atoms/Button";
+import Input from "@/components/atoms/Input";
+import CartItem from "@/components/molecules/CartItem";
+import OrderSummary from "@/components/organisms/OrderSummary";
+import Empty from "@/components/ui/Empty";
 
 const ShoppingCart = ({ cartItems, updateCartItem, removeFromCart, clearCart, cartTotal }) => {
   const navigate = useNavigate()
@@ -55,7 +55,7 @@ const ShoppingCart = ({ cartItems, updateCartItem, removeFromCart, clearCart, ca
 
     setIsProcessing(true)
 
-    try {
+try {
       const orderData = {
         customerName: customerInfo.name,
         customerEmail: customerInfo.email,
@@ -65,7 +65,7 @@ const ShoppingCart = ({ cartItems, updateCartItem, removeFromCart, clearCart, ca
       }
 
       const newOrder = await orderService.create(orderData)
-      
+
       // Clear cart and redirect to confirmation
       clearCart()
       toast.success("Order placed successfully!")

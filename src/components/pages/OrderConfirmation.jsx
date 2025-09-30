@@ -38,7 +38,7 @@ const OrderConfirmation = () => {
   if (error) return <Error message={error} onRetry={loadOrder} />
   if (!order) return <Error message="Order not found" />
 
-  const estimatedDelivery = new Date(order.createdAt)
+const estimatedDelivery = new Date(order.created_at_c || order.createdAt)
   estimatedDelivery.setDate(estimatedDelivery.getDate() + 3) // 3 days from order date
 
   return (
@@ -60,13 +60,13 @@ const OrderConfirmation = () => {
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-xl font-semibold flex items-center gap-2">
-                Order #{order.Id}
+Order #{order.Id}
                 <Badge variant="warning">
-                  {order.status}
+                  {order.status_c || order.status}
                 </Badge>
               </h2>
               <p className="text-secondary text-sm mt-1">
-                Placed on {new Date(order.createdAt).toLocaleDateString()} at {new Date(order.createdAt).toLocaleTimeString()}
+                Placed on {new Date(order.created_at_c || order.createdAt).toLocaleDateString()} at {new Date(order.created_at_c || order.createdAt).toLocaleTimeString()}
               </p>
             </div>
             <div className="text-right">
@@ -87,15 +87,15 @@ const OrderConfirmation = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
               <div>
                 <span className="text-secondary">Name:</span>
-                <p className="font-medium">{order.customerName}</p>
+<p className="font-medium">{order.customer_name_c || order.customerName}</p>
               </div>
               <div>
                 <span className="text-secondary">Email:</span>
-                <p className="font-medium">{order.customerEmail}</p>
+                <p className="font-medium">{order.customer_email_c || order.customerEmail}</p>
               </div>
               <div>
                 <span className="text-secondary">Phone:</span>
-                <p className="font-medium">{order.customerPhone}</p>
+                <p className="font-medium">{order.customer_phone_c || order.customerPhone}</p>
               </div>
               <div>
                 <span className="text-secondary">Estimated Delivery:</span>
@@ -134,15 +134,15 @@ const OrderConfirmation = () => {
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
                 <span>Subtotal:</span>
-                <span>${order.totalAmount.toFixed(2)}</span>
+<span>${(order.total_amount_c || order.totalAmount || 0).toFixed(2)}</span>
               </div>
               <div className="flex justify-between">
                 <span>Tax (8%):</span>
-                <span>${(order.totalAmount * 0.08).toFixed(2)}</span>
+                <span>${((order.total_amount_c || order.totalAmount || 0) * 0.08).toFixed(2)}</span>
               </div>
               <div className="flex justify-between font-semibold text-lg border-t pt-2">
                 <span>Total:</span>
-                <span className="text-primary">${(order.totalAmount * 1.08).toFixed(2)}</span>
+                <span className="text-primary">${((order.total_amount_c || order.totalAmount || 0) * 1.08).toFixed(2)}</span>
               </div>
             </div>
           </div>

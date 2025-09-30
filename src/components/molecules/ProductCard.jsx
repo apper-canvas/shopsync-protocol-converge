@@ -5,8 +5,9 @@ import StockIndicator from "@/components/molecules/StockIndicator"
 import ApperIcon from "@/components/ApperIcon"
 
 const ProductCard = ({ product, onAddToCart, onEdit, isManager = false }) => {
-  const handleAddToCart = () => {
-    if (product.stockQuantity > 0) {
+const handleAddToCart = () => {
+    const stockQty = product.stock_quantity_c || product.stockQuantity || 0
+    if (stockQty > 0) {
       onAddToCart(product)
     }
   }
@@ -15,8 +16,8 @@ const ProductCard = ({ product, onAddToCart, onEdit, isManager = false }) => {
     <Card className="group hover:shadow-lg transition-all duration-200 hover:scale-[1.02]">
       <div className="aspect-square bg-gray-100 rounded-t-lg overflow-hidden">
         <img
-          src={product.imageUrl}
-          alt={product.name}
+src={product.image_url_c || product.imageUrl || `https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=400&fit=crop&crop=center`}
+          alt={product.name_c || product.name}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           onError={(e) => {
             e.target.src = `https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=400&fit=crop&crop=center`
@@ -25,24 +26,24 @@ const ProductCard = ({ product, onAddToCart, onEdit, isManager = false }) => {
       </div>
       
       <CardContent className="p-4">
-        <div className="flex justify-between items-start mb-2">
+<div className="flex justify-between items-start mb-2">
           <h3 className="font-semibold text-gray-900 line-clamp-2 flex-1">
-            {product.name}
+            {product.name_c || product.name}
           </h3>
           <Badge variant="secondary" className="ml-2 text-xs">
-            {product.category}
+            {product.category_c || product.category}
           </Badge>
         </div>
         
-        <p className="text-gray-600 text-sm mb-3 line-clamp-2">
-          {product.description}
+<p className="text-gray-600 text-sm mb-3 line-clamp-2">
+          {product.description_c || product.description}
         </p>
         
-        <div className="flex items-center justify-between mb-3">
+<div className="flex items-center justify-between mb-3">
           <span className="text-2xl font-bold text-primary">
-            ${product.price.toFixed(2)}
+            ${(product.price_c || product.price || 0).toFixed(2)}
           </span>
-          <StockIndicator stockQuantity={product.stockQuantity} showText={false} />
+          <StockIndicator stockQuantity={product.stock_quantity_c || product.stockQuantity || 0} showText={false} />
         </div>
       </CardContent>
 
@@ -61,12 +62,12 @@ const ProductCard = ({ product, onAddToCart, onEdit, isManager = false }) => {
           </div>
         ) : (
           <Button
-            onClick={handleAddToCart}
-            disabled={product.stockQuantity === 0}
+onClick={handleAddToCart}
+            disabled={(product.stock_quantity_c || product.stockQuantity || 0) === 0}
             className="w-full flex items-center gap-2"
           >
             <ApperIcon name="ShoppingCart" className="w-4 h-4" />
-            {product.stockQuantity === 0 ? "Out of Stock" : "Add to Cart"}
+            {(product.stock_quantity_c || product.stockQuantity || 0) === 0 ? "Out of Stock" : "Add to Cart"}
           </Button>
         )}
       </CardFooter>

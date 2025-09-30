@@ -25,7 +25,7 @@ const CartItem = ({ item, onUpdateQuantity, onRemove }) => {
         <div className="flex items-center gap-4">
           <div className="w-16 h-16 bg-gray-100 rounded-lg overflow-hidden">
             <img
-              src={item.imageUrl}
+src={item.imageUrl || `https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=400&fit=crop&crop=center`}
               alt={item.productName}
               className="w-full h-full object-cover"
               onError={(e) => {

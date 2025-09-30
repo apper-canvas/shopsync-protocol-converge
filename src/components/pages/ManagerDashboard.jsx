@@ -191,15 +191,15 @@ const ManagerDashboard = () => {
               </div>
             ) : (
               <div className="space-y-3">
-                {dashboardData.lowStockProducts.slice(0, 5).map(product => (
+{dashboardData.lowStockProducts.slice(0, 5).map(product => (
                   <div key={product.Id} className="flex items-center justify-between p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
                     <div className="flex-1">
-                      <p className="font-medium text-sm">{product.name}</p>
-                      <p className="text-xs text-secondary">{product.category}</p>
+                      <p className="font-medium text-sm">{product.name_c || product.name}</p>
+                      <p className="text-xs text-secondary">{product.category_c || product.category}</p>
                     </div>
                     <div className="text-right">
-                      <Badge variant={product.stockQuantity === 0 ? "danger" : "warning"}>
-                        {product.stockQuantity} left
+                      <Badge variant={(product.stock_quantity_c || product.stockQuantity || 0) === 0 ? "danger" : "warning"}>
+                        {product.stock_quantity_c || product.stockQuantity || 0} left
                       </Badge>
                     </div>
                   </div>

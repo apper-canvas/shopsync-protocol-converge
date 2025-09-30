@@ -23,14 +23,14 @@ const ProductFormModal = ({ isOpen, onClose, product, onSave }) => {
   ]
 
   useEffect(() => {
-    if (product) {
+if (product) {
       setFormData({
-        name: product.name || "",
-        description: product.description || "",
-        price: product.price?.toString() || "",
-        stockQuantity: product.stockQuantity?.toString() || "",
-        category: product.category || "",
-        imageUrl: product.imageUrl || ""
+        name: product.name_c || product.name || "",
+        description: product.description_c || product.description || "",
+        price: (product.price_c || product.price)?.toString() || "",
+        stockQuantity: (product.stock_quantity_c || product.stockQuantity)?.toString() || "",
+        category: product.category_c || product.category || "",
+        imageUrl: product.image_url_c || product.imageUrl || ""
       })
     } else {
       setFormData({
